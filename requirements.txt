@@ -1,0 +1,4 @@
+# Python 3.11.3
+Flask==2.3.2
+requests==2.31.0
+cloudscraper==1.2.71
