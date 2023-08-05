@@ -16,12 +16,13 @@ def extract_data_between_strings(input_string, left_string, right_string):
 
     return input_string[left_index:right_index]
 
-
 def main(URLx):
     response = scraper.get(URLx)
-    token = extract_data_between_strings(response.text, "<input type='hidden' name='FU' value='", "'")
+    
+    token = extract_data_between_strings(response.text, '<input type="hidden" name="FU" value="', '"')
+
     if token is None:
-        print("Failed to extract token.")
+        print("Failed to extract token. FU1")
         return
 
     session = requests.Session()
@@ -81,3 +82,4 @@ def main(URLx):
     return final_Url
 
 
+# print(main('https://mlwbd.love/movie/hidayah-2023/'))

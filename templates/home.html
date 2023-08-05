@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        />
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                /* background-color: black; */
+                background-image: url("https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/bg.jpg");
+                min-height: 92vh;
+                /* overflow: scroll; */
+                padding-bottom: 3vh;
+            }
+
+            .mainH1 {
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                background-color: #ff0000;
+                padding: 1rem;
+                border-radius: 1rem;
+                color: white;
+            }
+            .mainH1:hover {
+                cursor: pointer;
+            }
+
+            form {
+                margin-bottom: 2rem;
+                display: flex;
+            }
+            form button {
+                background-color: #daa520;
+                border-radius: 0.5rem;
+                color: #ffffff;
+                font-weight: 700;
+                border: none;
+                padding: 0.3rem 1rem;
+            }
+            form button:hover {
+                background-color: #b68a1a;
+            }
+
+            form input {
+                border: 2px solid rgb(0, 195, 255);
+                border-radius: 0.4rem;
+                background: none;
+                color: white;
+                padding: 0.2rem 0.4rem;
+                display: inline-block;
+                margin-right: 0.5rem;
+                outline: none;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                row-gap: 1.4rem;
+            }
+            .card {
+                /* min-width: 5rem; */
+                max-width: 14rem;
+            }
+            .card img {
+                max-height: 14rem;
+                overflow: hidden;
+            }
+            .card-title {
+                font-size: 1rem;
+            }
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+
+            .loader {
+                border: 7px solid #daa520;
+                border-radius: 50%;
+                border-top: 7px solid #ffffff05;
+                border-right: 7px solid #ffffff05;
+                border-left: 7px solid #ffffff05;
+                width: 30px;
+                height: 30px;
+                margin: 0 1.75rem;
+                -webkit-animation: spin 1s linear infinite; /* Safari */
+                animation: spin 1s linear infinite;
+            }
+
+            /* Safari */
+            @-webkit-keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @media (max-width: 768px) {
+                form input {
+                    max-width: 10rem;
+                }
+                .card {
+                    /* min-width: 5rem; */
+                    max-width: 10rem;
+                }
+                .card img {
+                    max-height: 10rem;
+                    overflow: hidden;
+                }
+                .card-title {
+                    font-size: 0.7rem;
+                }
+                .btn-primary {
+                    font-size: 0.6rem;
+                    font-weight: bold;
+                    /* padding: auto 3rem; */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="mainH1" onclick="window.open('/', '_self')">
+            MLWBD Bypasser
+        </h1>
+        <form name="myForm" action="/" method="post">
+            <input name="userInput" type="text" />
+            <!-- <div class="loader"></div> -->
+            <button onClick="loading()" type="submit">Search</button>
+        </form>
+        <div class="container">
+            {%for items in itemsJson%}
+            <div class="card">
+                <img src="{{items['image']}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">{{items['title']}}"</h5>
+                    <button
+                        value="{{items['link'][25:-1]}}"
+                        class="btn btn-primary"
+                        onclick="goToBypass()"
+                    >
+                        Go to url
+                    </button>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            const loading = () => {
+                const el = document.createElement("div");
+                el.classList.add("loader");
+                const form = document.getElementsByTagName("form")[0];
+                form.lastElementChild.remove();
+                form.appendChild(el);
+                document.myForm.submit();
+            };
+            const goToBypass = () => {
+                let hrefValue = event.target.getAttribute("value");
+                window.open("/name" + hrefValue, "_blank");
+            };
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
