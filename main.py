@@ -25,9 +25,12 @@ def home():
 #         return flask.render_template('home.html')
 
 
-@app.route("/name/<mainurl>")
+@app.route("/bypass/<mainurl>", methods=["GET", "POST"])
 def index(mainurl):
-        user_Input = "https://mlwbd.love/movie/"+mainurl
+    if flask.request.method == "POST":
+        mainUrl = flask.request.form["myInput"]
+        print(mainUrl)
+        user_Input = "https://mlwbd.love/movie/"+mainUrl
         # print(user_Input)
         try:
             # scraper.get(user_Input)
@@ -38,6 +41,8 @@ def index(mainurl):
             error_message = type(e).__name__
             sleep(2)
             return flask.render_template('error.html', error_message=error_message)
+    else:
+        return flask.render_template('loading.html', mainurl=mainurl)
 
 
 if __name__ == '__main__':
