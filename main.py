@@ -13,23 +13,15 @@ def home():
         search_result = json.loads(search(search_query))
         return flask.render_template('home.html', itemsJson=search_result)
     else:
-        return flask.render_template('home.html')
-
-# @app.route('/', methods=['GET', 'POST'])
-# def home():
-#     if flask.request.method == 'POST':
-#         search_query = flask.request.form["userInput"]
-#         search_result = json.loads(search(search_query))
-#         return flask.render_template('home.html', itemsJson=search_result)
-#     else:
-#         return flask.render_template('home.html')
-
+        search_result = json.loads(search(''))
+        return flask.render_template('home.html', itemsJson=search_result)
+    
 
 @app.route("/bypass/<mainurl>", methods=["GET", "POST"])
 def index(mainurl):
     if flask.request.method == "POST":
         mainUrl = flask.request.form["myInput"]
-        print(mainUrl)
+        # print(mainUrl)
         user_Input = "https://mlwbd.love/movie/"+mainUrl
         # print(user_Input)
         try:
