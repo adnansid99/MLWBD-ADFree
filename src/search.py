@@ -15,11 +15,13 @@ def search(query: str):
             title = item.find('div', {'class': 'title'}).text.strip()
             link = item.find('a')['href']
             image = item.find('img')['src']
+            movie_name = link.split('/')[4]
 
             search_item = {
                 'title': title,
                 'link': link,
                 'image': image,
+                'movie_name': movie_name
             }
 
             search_items.append(search_item)

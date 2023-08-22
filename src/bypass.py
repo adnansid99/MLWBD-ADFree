@@ -80,6 +80,3 @@ def main(URLx):
 <br>
 <div class="topnav">""", '</div>')
     return final_Url
-
-
-# print(main('https://mlwbd.love/movie/hidayah-2023/'))

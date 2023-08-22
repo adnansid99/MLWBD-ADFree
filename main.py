@@ -1,7 +1,7 @@
 import flask
 from time import sleep
-from bypass import *
-from search import *
+from src.bypass import *
+from src.search import *
 
 app = flask.Flask(__name__)
 
@@ -21,11 +21,8 @@ def home():
 def index(mainurl):
     if flask.request.method == "POST":
         mainUrl = flask.request.form["myInput"]
-        # print(mainUrl)
-        user_Input = "https://mlwbd.love/movie/"+mainUrl
-        # print(user_Input)
+        user_Input = "https://mlwbd.media/movie/"+mainUrl
         try:
-            # scraper.get(user_Input)
             return_data = main(user_Input)
             extracted_FU = extract_data_between_strings(return_data, '<form method="post" action="https://namemeaningbengali.com/" rel="nofollow"><input type="hidden" name="FU5" value="', '"')
             return flask.render_template('bypassed.html', extracted_FU=extracted_FU)
@@ -38,4 +35,4 @@ def index(mainurl):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=9797, debug=True)
+    app.run(host='0.0.0.0',port=3000)

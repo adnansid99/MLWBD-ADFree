@@ -236,7 +236,7 @@
         <div class="card-body">
           <h5 class="card-title">{{items['title']}}"</h5>
           <button
-            value="{{items['link'][25:-1]}}"
+            value="{{items['movie_name']}}"
             class="btn btn-primary"
             onclick="goToBypass()"
           >
@@ -263,7 +263,7 @@
       };
       const goToBypass = () => {
         let hrefValue = event.target.getAttribute("value");
-        window.open("/bypass" + hrefValue, "_blank");
+        window.open("/bypass/" + hrefValue, "_blank");
       };
 
       const aboutbtn = () => {
