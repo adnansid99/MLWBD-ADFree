@@ -1,32 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Redirecting.....</title>
-    </head>
-    <body>
-        {% block content %}
-        <form
-            name="myForm"
-            id="myForm"
-            method="post"
-            action="https://namemeaningbengali.com/"
-            rel="alternate"
-            hidden
-        >
-            <input name="FU5" value="{{ extracted_FU }}" /><input
-                type="submit"
-                value="Download"
-                id="download"
-                class="button"
-                style="width: 50%"
-            />
-        </form>
-        {% endblock %}
-        <script>
-            document.myForm.submit();
-            // window.location.replace("/");
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting.....</title>
+  </head>
+  <body>
+    {% block content %}
+    <form
+      name="myForm"
+      id="myForm"
+      method="post"
+      action="https://namemeaningbengali.com/"
+      rel="alternate"
+      hidden
+    >
+      <input name="FU5" value="{{ extracted_FU }}" /><input
+        type="submit"
+        value="Download"
+        id="download"
+        class="button"
+        style="width: 50%"
+      />
+    </form>
+    {% endblock %}
+    <script>
+      document.myForm.submit();
+    </script>
+  </body>
 </html>
