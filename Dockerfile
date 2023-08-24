@@ -1,7 +1,7 @@
-FROM python:3.11
+FROM python:3.11.4
 
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install --force-reinstall -r requirements.txt
 
-CMD ["python", "main.py"]
+CMD ["waitress-serve", "main:app"]
