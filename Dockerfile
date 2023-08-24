@@ -4,4 +4,4 @@ COPY . .
 
 RUN pip install --force-reinstall -r requirements.txt
 
-CMD ["gunicorn", "main:app"]
+CMD ["gunicorn", "--log-level", "debug", "main:app"]
