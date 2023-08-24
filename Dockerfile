@@ -4,4 +4,4 @@ COPY . .
 
 RUN pip install --force-reinstall -r requirements.txt
 
-CMD ["waitress-serve", "main:app"]
+CMD ["gunicorn" "main:app"]
