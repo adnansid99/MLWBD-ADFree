@@ -16,10 +16,10 @@ def extract_data_between_strings(input_string, left_string, right_string):
 
     return input_string[left_index:right_index]
 
-def main(URLx):
-    response = scraper.get(URLx)
+async def main(URLx):
+    response = await scraper.get(URLx)
     
-    token = extract_data_between_strings(response.text, '<input type="hidden" name="FU" value="', '"')
+    token = await extract_data_between_strings(response.text, '<input type="hidden" name="FU" value="', '"')
 
     if token is None:
         print("Failed to extract token. FU1")
@@ -36,47 +36,47 @@ def main(URLx):
     }
 
     FU = token
-    response = session.post(url,
+    response = await session.post(url,
                             data=f'FU={token}',
                             headers=headers)
     response_text = response.text
 
-    url = extract_data_between_strings(response_text, 'id="verifying-source" action="', '"')
-    fu2 = extract_data_between_strings(response_text, 'name="FU2" value="', '"')
+    url = await extract_data_between_strings(response_text, 'id="verifying-source" action="', '"')
+    fu2 = await extract_data_between_strings(response_text, 'name="FU2" value="', '"')
 
     if url is None or fu2 is None:
         print("Failed to extract URL or FU2.")
         return
 
     content = f"FU2={fu2}"
-    response = session.post(url, data=content, headers=headers)
+    response = await session.post(url, data=content, headers=headers)
     response_text = response.text
 
     # Parse response for FU4
-    fu2 = extract_data_between_strings(response_text, 'name="FU2" value="', '"')
+    fu2 = await extract_data_between_strings(response_text, 'name="FU2" value="', '"')
 
     # Third request
     url = "https://freethemesy.com/"
     content = f"FU2={fu2}"
-    response = session.post(url, data=content, headers=headers)
+    response = await session.post(url, data=content, headers=headers)
     response_text = response.text
 
     # Parse response for FU5
-    fu3 = extract_data_between_strings(response_text, 'name="FU3" value="', '"')
+    fu3 = await extract_data_between_strings(response_text, 'name="FU3" value="', '"')
 
     # Fourth request
     url = "https://freethemesy.com/top-6-health-benefits-of-meditation/"
     content = f"FU3={fu3}"
-    response = session.post(url, data=content, headers=headers)
+    response = await session.post(url, data=content, headers=headers)
     response_text = response.text
 
     # Fifth request
-    fu4 = extract_data_between_strings(response_text, 'name="FU4" value="', '"')
+    fu4 = await extract_data_between_strings(response_text, 'name="FU4" value="', '"')
     url = "https://freethemesy.com/career-guide-software-development-for-your-bright-future/"
     content = f"FU4={fu4}"
-    response = session.post(url, data=content, headers=headers)
+    response = await session.post(url, data=content, headers=headers)
     response_text = response.text
-    final_Url = extract_data_between_strings(response_text, """<div class="card" id="lastlink"> </div>
+    final_Url = await extract_data_between_strings(response_text, """<div class="card" id="lastlink"> </div>
 <br>
 <div class="topnav">""", '</div>')
     return final_Url
