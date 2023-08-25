@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import cloudscraper as cs
 scraper = cs.create_scraper()
 
-async def search(query: str):
+def search(query: str):
     url = f"https://mlwbd.media/?s={query}"
-    response = await scraper.get(url)
+    response = scraper.get(url)
 
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
