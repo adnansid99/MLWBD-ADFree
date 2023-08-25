@@ -35,4 +35,4 @@ async def index(mainurl):
 
 
 if __name__ == '__main__':
-    app.run(port=443)
+    app.run()
