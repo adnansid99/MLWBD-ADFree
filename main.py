@@ -18,13 +18,13 @@ def home():
     
 
 @app.route("/bypass/<mainurl>", methods=["GET", "POST"])
-async def index(mainurl):
+def index(mainurl):
     if flask.request.method == "POST":
         mainUrl = flask.request.form["myInput"]
         user_Input = "https://mlwbd.media/movie/"+mainUrl
         try:
-            return_data = await main(user_Input)
-            extracted_FU = await extract_data_between_strings(return_data, '<form method="post" action="https://namemeaningbengali.com/" rel="nofollow"><input type="hidden" name="FU5" value="', '"')
+            return_data = main(user_Input)
+            extracted_FU = extract_data_between_strings(return_data, '<form method="post" action="https://namemeaningbengali.com/" rel="nofollow"><input type="hidden" name="FU5" value="', '"')
             return flask.render_template('bypassed.html', extracted_FU=extracted_FU)
         except Exception as e:
             error_message = type(e).__name__
