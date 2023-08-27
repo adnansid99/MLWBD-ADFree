@@ -3,16 +3,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, #161d33, #080e1f 50%);
+  background-color: black;
   padding-bottom: 3vh;
 }
 
 .mainH1 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  background-color: #ff0000;
-  padding: 1rem;
-  border-radius: 1rem;
+  background-color: #2b2b2b;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
   color: white;
 }
 .mainH1:hover {
@@ -24,7 +24,7 @@ form {
   display: flex;
 }
 form button {
-  background-color: #013c67;
+  background-color: #009373;
   border-radius: 0.4rem;
   color: #ffffff;
   font-weight: 700;
@@ -34,7 +34,7 @@ form button {
   margin: 0.5rem 0rem 0.5rem -5.5rem;
 }
 form button:hover {
-  background-color: #004678;
+  background-color: #00795f;
 }
 
 form input {
@@ -64,7 +64,7 @@ form input:-webkit-autofill:active {
 .card {
   /* min-width: 5rem; */
   max-width: 14rem;
-  background-color: #264653;
+  background-color: #dfdfdf00;
   border: 3px outset #aeaeae;
 }
 .card img {
@@ -72,9 +72,12 @@ form input:-webkit-autofill:active {
   overflow: hidden;
 }
 .card-title {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #eaeaea;
   font-weight: 500;
+  /* position: absolute; */
+  /* display: flex;
+  gap: 2rem; */
 }
 .card-body {
   display: flex;
@@ -87,8 +90,8 @@ form input:-webkit-autofill:active {
 .btn-primary {
   border: none;
   background-color: #2a9d8f;
-  font-size: 0.8rem !important;
-  font-weight: 500;
+  font-size: 0.75rem !important;
+  font-weight: 450;
 }
 .btn-primary:hover {
   background-color: #35c2b2;
@@ -162,7 +165,7 @@ form input:-webkit-autofill:active {
     all: unset;
   }
   form button {
-    background-color: #013c67;
+    background-color: #2a9d8f;
     border-radius: 0.5rem;
     color: #ffffff;
     font-weight: 700;
@@ -170,7 +173,7 @@ form input:-webkit-autofill:active {
     padding: 0.3rem 1rem;
   }
   form button:hover {
-    background-color: #004678;
+    background-color: #2a9d8f;
   }
   form input {
     all: unset;
