@@ -33,9 +33,62 @@
     />
   </head>
   <body>
-    <button onclick="aboutbtn()" class="aboutmebtn">
+    <!-- Button trigger modal -->
+    <button
+      id="dialogView"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+      hidden
+    ></button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-3" id="staticBackdropLabel">
+              🚩Disclaimer
+            </h1>
+          </div>
+          <div class="modal-body">
+            Mlwbd-adfree functions as an alternative of mlwbd.com. It provides
+            users with a more seamless experience by eliminating ads and
+            bypassing link shorteners, making the process of downloading movies
+            and series hassle-free. <br /><br />⚠️This is a free project. Do not
+            sell it anywhere.⚠️<br /><br />Made with ❤️ by Adnan Siddiqui
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="dialog-btn1 btn btn-secondary"
+              data-bs-dismiss="modal"
+              onclick="dialogBtn1()"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="dialog-btn2 btn btn-primary"
+              onclick="dialogBtn2()"
+            >
+              Follow Me
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button onclick="aboutbtn()" class="aboutmebtn">
       &#128073;&#127996; Adnan Siddiqui &#128072;&#127996;
-    </button>
+    </button> -->
 
     <h1 class="mainH1" onclick="window.open('/', '_self')">
       <img
@@ -47,7 +100,7 @@
 
     <form name="myForm" id="myform" action="/" method="post">
       <input name="userInput" type="text" />
-      <button onClick="loading()" type="submit">Search</button>
+      <button onclick="loading()" type="submit">Search</button>
     </form>
 
     <div class="container">
@@ -79,5 +132,10 @@
       integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
       crossorigin="anonymous"
     ></script>
+    <script>
+      modalView();
+    </script>
+    <hr />
+    <footer class="footer">Copyright&copy;2023 | Adnan Siddiqui</footer>
   </body>
 </html>
