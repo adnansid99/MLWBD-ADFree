@@ -150,14 +150,17 @@ form input:-webkit-autofill:active {
   /* opacity: 0.7; */
 }
 @media (max-width: 768px) {
+  .mainH1 img {
+    width: 16rem;
+  }
   form input {
-    max-width: 10rem;
+    max-width: 9rem;
   }
   .card {
-    max-width: 10rem;
+    max-width: 9rem;
   }
   .card img {
-    max-height: 10rem;
+    max-height: 9rem;
     overflow: hidden;
   }
 
@@ -165,15 +168,16 @@ form input:-webkit-autofill:active {
     all: unset;
   }
   form button {
-    background-color: #2a9d8f;
+    background-color: #012e4f;
     border-radius: 0.5rem;
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 0.85rem;
     border: none;
-    padding: 0.3rem 1rem;
+    padding: 0.1rem 0.8rem;
   }
   form button:hover {
-    background-color: #2a9d8f;
+    background-color: #002540;
   }
   form input {
     all: unset;
@@ -183,7 +187,7 @@ form input:-webkit-autofill:active {
     border-radius: 0.4rem;
     background: none;
     color: white;
-    padding: 0.2rem 0.4rem;
+    padding: 0.1rem 0.3rem;
     /* display: inline-block; */
     margin-right: 0.5rem;
     outline: none;
@@ -192,12 +196,13 @@ form input:-webkit-autofill:active {
     font-size: 0.7rem;
   }
   .btn-primary {
-    font-size: 0.6rem;
-    font-weight: bold;
+    font-size: 0.6rem !important;
+    font-weight: 600;
   }
   .aboutmebtn {
     top: 1rem;
     left: 0;
+    font-size: 0.75rem;
     position: relative;
   }
   .loader {
