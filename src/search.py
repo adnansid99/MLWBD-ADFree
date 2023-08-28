@@ -4,7 +4,7 @@ import cloudscraper as cs
 scraper = cs.create_scraper()
 
 def search(query: str):
-    url = f"https://mlwbd.media/?s={query}"
+    url = f"https://mlwbd.digital/?s={query}"
     response = scraper.get(url)
 
     if response.status_code == 200:
