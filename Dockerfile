@@ -4,4 +4,5 @@ COPY . .
 
 RUN pip install --force-reinstall -r requirements.txt
 
-CMD ["python", "main.py"]
+# CMD ["python", "main.py"]
+CMD ["gunicorn" , "main:app"]
