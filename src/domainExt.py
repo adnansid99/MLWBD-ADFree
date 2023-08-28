@@ -1,12 +1,8 @@
 import requests
-from bs4 import BeautifulSoup
 
 def domain():
-    res = requests.get('https://mlwbd.com')
-    soup = BeautifulSoup(res.text, 'html.parser')
-    returnData = soup.find('a', {'class': 'btn-solid-lg'})
-    domainNamehref = returnData["href"]
-    domainSplit = domainNamehref.split(".")
-    return domainSplit[1]
+    res = requests.get('https://densehospitableellipse.adnansidd99.repl.co')
+    domainExt = res.json()['domain']
+    return domainExt
 
 # print(domain())
