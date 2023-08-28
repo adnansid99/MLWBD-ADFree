@@ -2,19 +2,19 @@ import flask
 from time import sleep
 from src.bypass import *
 from src.search import *
-from src.domainExt import domainExt
+from src.domainExt import *
 
 app = flask.Flask(__name__)
-
+domainExt = str(domain())
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if flask.request.method == 'POST':
         search_query = flask.request.form["userInput"]
-        search_result = json.loads(search(search_query))
+        search_result = json.loads(search(search_query, domainExt))
         return flask.render_template('home.html', itemsJson=search_result)
     else:
-        search_result = json.loads(search(''))
+        search_result = json.loads(search('', domainExt))
         return flask.render_template('home.html', itemsJson=search_result)
     
 

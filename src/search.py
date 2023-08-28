@@ -1,10 +1,10 @@
 import json
 from bs4 import BeautifulSoup
 import cloudscraper as cs
-from main import domainExt
+# from ..main import domainExt
 scraper = cs.create_scraper()
 
-def search(query: str):
+def search(query: str, domainExt):
     url = f"https://mlwbd.{domainExt}?s={query}"
     response = scraper.get(url)
 
