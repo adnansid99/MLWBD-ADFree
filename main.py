@@ -4,8 +4,8 @@ from src.bypass import *
 from src.search import *
 from src.domainExt import *
 
-app = flask.Flask(__name__)
 domainExt = str(domain())
+app = flask.Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():

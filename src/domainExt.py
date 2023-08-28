@@ -5,6 +5,8 @@ def domain():
     res = requests.get('https://mlwbd.com')
     soup = BeautifulSoup(res.text, 'html.parser')
     returnData = soup.find('a', {'class': 'btn-solid-lg page-scroll'})
-    domainName = str(returnData['href']).split('.')
-    return domainName[1]
+    domainNamehref = returnData["href"]
+    domainSplit = domainNamehref.split(".")
+    return domainSplit[1]
 
+# print(domain())
