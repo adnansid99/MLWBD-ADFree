@@ -4,7 +4,7 @@ from src.bypass import *
 from src.search import *
 from src.domainExt import *
 
-domainExt = str(domain())
+domainExt = domain()
 app = flask.Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -36,4 +36,4 @@ def index(mainurl):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=443)
+    app.run(host='0.0.0.0', port=443, debug=True)
