@@ -4,8 +4,8 @@ import cloudscraper as cs
 # from ..main import domainExt
 scraper = cs.create_scraper()
 
-def search(query: str, domainExt: str):
-    url = f"https://mlwbd.{domainExt}/?s={query}"
+def search(query: str):
+    url = f"https://mlwbd.love/?s={query}"
     response = scraper.get(url)
 
     if response.status_code == 200:
