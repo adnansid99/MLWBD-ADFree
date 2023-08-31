@@ -1,4 +1,5 @@
 import flask
+import os
 from time import sleep
 from src.bypass import *
 from src.search import *
@@ -34,4 +35,4 @@ def index(mainurl):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=os.environ.get("PORT", "8080"))
