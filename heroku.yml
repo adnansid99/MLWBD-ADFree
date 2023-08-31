@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: python main.py
+  web: gunicon -b "0.0.0.0:$(PORT)" main:app
