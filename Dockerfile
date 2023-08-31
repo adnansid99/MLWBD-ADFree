@@ -2,9 +2,9 @@ FROM python:3.11.4
 
 COPY . .
 
-RUN pip install --force-reinstall -r requirements.txt
+RUN pip install -r requirements.txt
 
-CMD ["python", "main.py"]
-# CMD ["gunicorn", "main:app"]
+# CMD ["python", "main.py"]
+# CMD ["gunicorn", "-b", "0.0.0.0", "main:app"]
 
 # gunicorn -b "0.0.0.0" main:app
