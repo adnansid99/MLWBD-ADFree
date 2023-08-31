@@ -3,9 +3,8 @@ import os
 from time import sleep
 from src.bypass import *
 from src.search import *
-from src.domainExt import *
 
-getDomain = get_domain()
+getDomain = "love"
 
 app = flask.Flask(__name__)
 
