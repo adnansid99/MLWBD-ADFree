@@ -44,7 +44,7 @@ const modalView = () => {
       .padStart(2, "0")}-${initDate2.getDate().toString().padStart(2, "0")}`;
 
     let savedDate = localStorage.getItem("dialogCheck");
-    if (daysDifference(currentDate, savedDate) == "3") {
+    if (daysDifference(currentDate, savedDate) == "1") {
       dialogView.click();
     }
   }
