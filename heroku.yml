@@ -1,5 +1,3 @@
 build:
   docker:
     web: Dockerfile
-run:
-  web: gunicon -b "0.0.0.0:$(PORT)" main:app
