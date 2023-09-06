@@ -30,7 +30,6 @@ const dialogBtn1 = () => {
 const daysDifference = (cD, sD) => {
   const timeDiff = Math.abs(cD - sD);
   const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-  alert("Days Difference:",daysDiff)
   return daysDiff;
 };
 
@@ -45,6 +44,7 @@ const modalView = () => {
       .padStart(2, "0")}-${initDate2.getDate().toString().padStart(2, "0")}`;
 
     let savedDate = localStorage.getItem("dialogCheck");
+    alert(daysDifference(currentDate, savedDate))
     if (daysDifference(currentDate, savedDate) >= 1) {
       dialogView.click();
     }
