@@ -2,7 +2,9 @@ FROM python:3.11.4
 
 COPY . .
 
-ENV PORT="8000"
+ARG PORT
+
+ENV PORT=$PORT
 
 RUN pip install -r requirements.txt
 
