@@ -1,5 +1,5 @@
 build:
   docker:
     web: Dockerfile
-run: 
-  web: gunicorn -w 5 -b $HOST:$PORT main:app
+run:
+  web: gunicorn -b $HOST:$PORT main:app
