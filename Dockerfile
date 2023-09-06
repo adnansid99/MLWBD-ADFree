@@ -4,7 +4,7 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "main.py"]
-# CMD ["gunicorn", "-b", "0.0.0.0:8000", "main:app"]
+# CMD ["python", "main.py"]
+CMD ["gunicorn", "-w", "5", "-b", "0.0.0.0:8000", "main:app"]
 
 # gunicorn -b "0.0.0.0" main:app
