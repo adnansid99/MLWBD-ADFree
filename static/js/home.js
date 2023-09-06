@@ -30,6 +30,7 @@ const dialogBtn1 = () => {
 const daysDifference = (cD, sD) => {
   const timeDiff = Math.abs(cD - sD);
   const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+  alert("Days Difference:",daysDiff)
   return daysDiff;
 };
 
