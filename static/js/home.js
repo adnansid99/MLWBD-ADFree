@@ -47,6 +47,6 @@ const modalView = () => {
     alert(daysDifference(currentDate, savedDate))
     if (daysDifference(currentDate, savedDate) >= 1) {
       dialogView.click();
-    }
+    } else {dialogView.click():}
   }
 };
