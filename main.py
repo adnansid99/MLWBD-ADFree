@@ -8,7 +8,7 @@ from src.domainExt import *
 getDomain = get_domain()
 
 app = flask.Flask(__name__)
-
+app.config['DEBUG'] = os.environ.get('DEBUG_MODE', False)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
